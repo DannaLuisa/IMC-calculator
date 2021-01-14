@@ -1,0 +1,22 @@
+<div class="inicio">
+    <div class="card">
+        <div class="card-body">
+            <h2 class="titulo text-center">Iniciar Sesion</h2>
+            <form class="text-center" (ngSubmit)="login(for)" #for="ngForm">
+                <div class="md-form">
+                    <span *ngIf="for.submitted && for.controls['email'].errors" class="text-danger animated fadeIn">El correo es obligatorio</span>
+                    <input type="email" id="email" name="email" class="form-control text-center" required placeholder="Correo Eléctronico" [(ngModel)]="usuario.email">
+                </div>
+                <div class="md-form">
+                    <span *ngIf="for.submitted && for.controls['password'].errors" class="text-danger animated fadeIn">La contraseña es obligatorio</span>
+                    <input type="password"
+                    required id="password" name="password" class="form-control text-center" placeholder="Contraseña" [(ngModel)]="usuario.password">
+                </div>
+                <div>
+                    <p> Si aun no tienes una cuenta <a routerLink="/signin">Registrarse</a></p>
+                </div>
+                <input type="submit" class="btn btn-warning btn-block" value="Ingresar">
+            </form>
+        </div>
+    </div>
+</div>
